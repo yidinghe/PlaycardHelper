@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="96dp"
     android:layout_margin="4dp"
-    android:background="@color/bg_swipe_item_neutral">
+    android:background="@color/colorPrimaryDark">
 
     <FrameLayout
         android:id="@+id/container"
@@ -16,11 +16,12 @@
         tools:ignore="UselessParent">
 
         <TextView
-            android:id="@+id/text"
+            android:id="@+id/text_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="top|left"
             android:gravity="center"
+            android:textColor="#ffffff"
             tools:ignore="RtlHardcoded" />
 
     </FrameLayout>
