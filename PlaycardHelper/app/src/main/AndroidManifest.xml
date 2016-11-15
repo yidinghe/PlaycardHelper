@@ -11,9 +11,15 @@
         <activity android:name=".ui.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activities.NewGameActivity"></activity>
+        <activity android:name=".ui.activities.GameActivity"></activity>
+        <activity android:name=".ui.activities.RankActivity"></activity>
+        <activity android:name=".ui.activities.AboutActivity"></activity>
+        <activity android:name=".ui.activities.HelpActivity"></activity>
     </application>
 
 </manifest>

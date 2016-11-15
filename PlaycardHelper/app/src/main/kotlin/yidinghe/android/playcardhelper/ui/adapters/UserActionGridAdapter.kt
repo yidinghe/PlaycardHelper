@@ -36,6 +36,7 @@ class ViewHolder(view: View, val itemClick: (UserAction) -> Unit) : RecyclerView
 
         with(userAction) {
             itemView.text_view.text = this.name
+
             itemView.text_view.setOnClickListener {
                 Log.d(javaClass.simpleName, "click trigger")
                 itemClick(this)
