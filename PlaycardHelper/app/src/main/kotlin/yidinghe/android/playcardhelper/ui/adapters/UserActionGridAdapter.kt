@@ -1,6 +1,7 @@
 package yidinghe.android.playcardhelper.ui.adapters
 
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,10 +35,14 @@ class ViewHolder(view: View, val itemClick: (UserAction) -> Unit) : RecyclerView
     fun bindUserAction(userAction: UserAction) {
 
         with(userAction) {
-            itemView.text_view.text = userAction.name
-            itemView.setOnClickListener { itemClick(this) }
+            itemView.text_view.text = this.name
+            itemView.text_view.setOnClickListener {
+                Log.d(javaClass.simpleName, "click trigger")
+                itemClick(this)
+            }
         }
 
     }
+
 
 }

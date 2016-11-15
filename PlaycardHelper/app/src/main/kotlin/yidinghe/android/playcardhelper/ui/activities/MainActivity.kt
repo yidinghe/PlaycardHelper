@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import com.h6ah4i.android.widget.advrecyclerview.decoration.ItemShadowDecorator
 import org.jetbrains.anko.find
 import org.jetbrains.anko.toast
@@ -24,7 +25,10 @@ class MainActivity : AppCompatActivity() {
         val userActionRecyclerView: RecyclerView = find(R.id.user_action_recycler_view)
         userActionRecyclerView.layoutManager = GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false)
 
-        userActionRecyclerView.adapter = UserActionGridAdapter(initData()) { toast(it.name) }
+        userActionRecyclerView.adapter = UserActionGridAdapter(initData()) {
+            Log.d(javaClass.simpleName, "click trigger callback")
+            toast(it.name)
+        }
         userActionRecyclerView.addItemDecoration(ItemShadowDecorator(getDrawable(R.drawable.material_shadow_z1) as NinePatchDrawable))
 
     }
