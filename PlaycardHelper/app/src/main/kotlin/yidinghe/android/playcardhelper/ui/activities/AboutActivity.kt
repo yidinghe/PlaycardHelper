@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import org.jetbrains.anko.contentView
 import yidinghe.android.playcardhelper.R
+import yidinghe.com.android.kotlin.extensions.snackBar
 
 class AboutActivity : AppCompatActivity() {
 
@@ -12,6 +13,6 @@ class AboutActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_game)
 
-        Snackbar.make(contentView!!, "AboutActivity", Snackbar.LENGTH_SHORT).show()
+        snackBar("AboutActivity")
     }
 }

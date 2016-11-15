@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
 
         val userActionRecyclerView: RecyclerView = find(R.id.user_action_recycler_view)
         userActionRecyclerView.layoutManager = GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false)
-
         userActionRecyclerView.adapter = UserActionGridAdapter(initData()) {
             when (it) {
                 UserAction.NEW_GAME -> startNewGame()
