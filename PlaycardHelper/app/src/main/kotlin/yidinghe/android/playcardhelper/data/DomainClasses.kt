@@ -11,7 +11,9 @@ import java.util.*
  * Created by yidinghe on 11/16/16.
  */
 
-data class User(val avatar: Avatar, val rank: Int, val score: Double, val imageUrl: String)
+data class GameData(val users: List<User>, var round: Int = 0)
+
+data class User(val avatar: Avatar, var score: Double = 0.0, var isBankerSideForThisRound: Boolean = false)
 
 data class Avatar(val avatarName: AvatarName, val male: Boolean, val imageIndex: Int = 0, val background: Int = Random().nextInt(3), var isChecked: Boolean = false)
 

@@ -31,6 +31,7 @@ class AvatarGridAdapter(val items: List<Avatar>, val itemClick: (Avatar) -> Unit
         return AvatarViewHolder(view, itemClick)
     }
 
+
 }
 
 class AvatarViewHolder(view: View, val itemClick: (Avatar) -> Unit) : RecyclerView.ViewHolder(view) {
@@ -41,17 +42,24 @@ class AvatarViewHolder(view: View, val itemClick: (Avatar) -> Unit) : RecyclerVi
             itemView.avatar_text_view.text = this.avatarName.name
             avatar.loadBackgroundImage(itemView.avatar_background_image_view)
             avatar.loadAvatarImage(itemView.avatar_image_view)
-
+            if (avatar.isChecked){
+                itemView.avatar_add_image_view.visibility = View.VISIBLE
+            }else{
+                itemView.avatar_add_image_view.visibility = View.GONE
+            }
             itemView.avatar_container.setOnClickListener {
                 Log.d(javaClass.simpleName, "click trigger")
                 avatar.isChecked = !avatar.isChecked
                 if (avatar.isChecked){
-
+                    itemView.avatar_add_image_view.visibility = View.VISIBLE
+                }else{
+                    itemView.avatar_add_image_view.visibility = View.GONE
                 }
                 itemClick(this)
             }
         }
 
     }
+
 
 }

@@ -5,13 +5,19 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
+import android.widget.Button
+import com.google.gson.Gson
 import org.jetbrains.anko.contentView
 import org.jetbrains.anko.find
 import org.jetbrains.anko.toast
 import yidinghe.android.playcardhelper.R
 import yidinghe.android.playcardhelper.data.Avatar
 import yidinghe.android.playcardhelper.data.AvatarName
+import yidinghe.android.playcardhelper.data.DataMapper
+import yidinghe.android.playcardhelper.data.GameData
 import yidinghe.android.playcardhelper.ui.adapters.AvatarGridAdapter
+import yidinghe.android.playcardhelper.utils.CommonLib
 import yidinghe.com.android.kotlin.extensions.snackBar
 import java.util.*
 
@@ -31,15 +37,29 @@ class NewGameActivity : AppCompatActivity() {
 
         val avatarRecyclerView: RecyclerView = find(R.id.avatar_recycler_view)
         avatarRecyclerView.layoutManager = GridLayoutManager(this, 4, GridLayoutManager.VERTICAL, false)
-        avatarRecyclerView.adapter = AvatarGridAdapter(initData()) {
-            if(it.isChecked) {
+
+        val avatars = initData()
+
+        avatarRecyclerView.adapter = AvatarGridAdapter(avatars) {
+            if (it.isChecked) {
                 snackBar("Player ${it.avatarName.name} is added into the game")
-            }else{
+            } else {
                 snackBar("Player ${it.avatarName.name} is removed from the game")
             }
 
         }
 
+
+        val nextButton: Button = find(R.id.new_game_next_button)
+        nextButton.setOnClickListener {
+            val users = DataMapper().convertFromAvatarToUser(avatars)
+
+            val gameInfo = Gson().toJson(GameData(users))
+            Log.d(javaClass.simpleName, gameInfo)
+
+            CommonLib.putGameInfo(gameInfo)
+            finish()
+        }
 
     }
 

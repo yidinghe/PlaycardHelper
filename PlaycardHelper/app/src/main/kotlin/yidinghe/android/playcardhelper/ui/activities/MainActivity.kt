@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 UserAction.ABOUT -> startAbout()
             }
         }
-       // userActionRecyclerView.addItemDecoration(ItemShadowDecorator(getDrawable(R.drawable.material_shadow_z1) as NinePatchDrawable))
+        // userActionRecyclerView.addItemDecoration(ItemShadowDecorator(getDrawable(R.drawable.material_shadow_z1) as NinePatchDrawable))
 
 
     }
@@ -55,13 +55,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun startContinueGame() {
         if (CommonLib.isGameInfoExisted())
-            alert("Continue", "Game Data existed, please continue.")
-            {
-                yesButton {
-                    startActivity<GameActivity>()
-                }
-                noButton {}
-            }.show()
+            startActivity<GameActivity>()
         else
             snackBar("No Game Data, please start a New Game.")
 
