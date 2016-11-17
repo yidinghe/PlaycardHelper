@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 UserAction.ABOUT -> startAbout()
             }
         }
-        userActionRecyclerView.addItemDecoration(ItemShadowDecorator(getDrawable(R.drawable.material_shadow_z1) as NinePatchDrawable))
+       // userActionRecyclerView.addItemDecoration(ItemShadowDecorator(getDrawable(R.drawable.material_shadow_z1) as NinePatchDrawable))
 
 
     }

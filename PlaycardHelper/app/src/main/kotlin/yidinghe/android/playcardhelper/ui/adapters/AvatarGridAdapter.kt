@@ -44,6 +44,10 @@ class AvatarViewHolder(view: View, val itemClick: (Avatar) -> Unit) : RecyclerVi
 
             itemView.avatar_container.setOnClickListener {
                 Log.d(javaClass.simpleName, "click trigger")
+                avatar.isChecked = !avatar.isChecked
+                if (avatar.isChecked){
+
+                }
                 itemClick(this)
             }
         }

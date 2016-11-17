@@ -32,7 +32,12 @@ class NewGameActivity : AppCompatActivity() {
         val avatarRecyclerView: RecyclerView = find(R.id.avatar_recycler_view)
         avatarRecyclerView.layoutManager = GridLayoutManager(this, 4, GridLayoutManager.VERTICAL, false)
         avatarRecyclerView.adapter = AvatarGridAdapter(initData()) {
-            toast(it.avatarName.name)
+            if(it.isChecked) {
+                snackBar("Player ${it.avatarName.name} is added into the game")
+            }else{
+                snackBar("Player ${it.avatarName.name} is removed from the game")
+            }
+
         }
 
 

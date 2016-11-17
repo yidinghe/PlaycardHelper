@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.list_grid_item.view.*
 import yidinghe.android.playcardhelper.R
 import yidinghe.android.playcardhelper.data.UserAction
+import yidinghe.android.playcardhelper.data.loadBackgroundImage
 import yidinghe.com.android.kotlin.extensions.ctx
 
 /**
@@ -35,9 +36,10 @@ class UserActionViewHolder(view: View, val itemClick: (UserAction) -> Unit) : Re
     fun bindUserAction(userAction: UserAction) {
 
         with(userAction) {
-            itemView.text_view.text = this.name
+            itemView.user_action_text_view.text = this.name
+            userAction.loadBackgroundImage(itemView.user_action_image_view)
 
-            itemView.text_view.setOnClickListener {
+            itemView.user_action_container.setOnClickListener {
                 Log.d(javaClass.simpleName, "click trigger")
                 itemClick(this)
             }

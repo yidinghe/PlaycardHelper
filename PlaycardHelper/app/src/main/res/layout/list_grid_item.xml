@@ -2,28 +2,36 @@
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="96dp"
-    android:layout_margin="4dp"
-    android:background="@color/colorPrimaryDark">
+    android:layout_width="110dp"
+    android:layout_height="110dp"
+    android:background="@mipmap/guangqua">
 
-    <FrameLayout
-        android:id="@+id/container"
+    <RelativeLayout
+        android:id="@+id/user_action_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clickable="true"
         android:foreground="?attr/selectableItemBackground"
         tools:ignore="UselessParent">
 
-        <TextView
-            android:id="@+id/text_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="top|left"
-            android:gravity="center"
-            android:textColor="#ffffff"
-            tools:ignore="RtlHardcoded" />
+    <ImageView
+        android:id="@+id/user_action_image_view"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="fitXY"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp" />
 
-    </FrameLayout>
+    <TextView
+        android:id="@+id/user_action_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_action_image_view"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        tools:ignore="RtlHardcoded" />
+    </RelativeLayout>
 
 </FrameLayout>

@@ -11,22 +11,22 @@ import java.util.*
  * Created by yidinghe on 11/16/16.
  */
 
-data class User(val userName: String, val rank: Int, val score: Double, val imageUrl: String)
+data class User(val avatar: Avatar, val rank: Int, val score: Double, val imageUrl: String)
 
-data class Avatar(val avatarName: AvatarName, val male: Boolean, val imageIndex: Int = 0, val background: Int = Random().nextInt(3))
+data class Avatar(val avatarName: AvatarName, val male: Boolean, val imageIndex: Int = 0, val background: Int = Random().nextInt(3), var isChecked: Boolean = false)
 
-fun Avatar.loadBackgroundImage(imageView: ImageView){
-    when(background){
+fun Avatar.loadBackgroundImage(imageView: ImageView) {
+    when (background) {
         0 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.avatar_background_1).into(imageView)
         1 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.avatar_background_2).into(imageView)
         2 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.avatar_background_3).into(imageView)
     }
 }
 
-fun Avatar.loadAvatarImage(imageView: ImageView){
+fun Avatar.loadAvatarImage(imageView: ImageView) {
 
-    if (male){
-        when(imageIndex){
+    if (male) {
+        when (imageIndex) {
             0 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.male_00).into(imageView)
             1 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.male_01).into(imageView)
             2 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.male_02).into(imageView)
@@ -41,8 +41,8 @@ fun Avatar.loadAvatarImage(imageView: ImageView){
             11 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.male_11).into(imageView)
             12 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.male_12).into(imageView)
         }
-    }else{
-        when(imageIndex){
+    } else {
+        when (imageIndex) {
             0 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.female_00).into(imageView)
             1 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.female_01).into(imageView)
             2 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.female_02).into(imageView)
@@ -61,6 +61,17 @@ fun Avatar.loadAvatarImage(imageView: ImageView){
 
 enum class UserAction {
     NEW_GAME, CONTINUE, RANK, HELP, ABOUT
+}
+
+
+fun UserAction.loadBackgroundImage(imageView: ImageView) {
+    when (this) {
+        UserAction.ABOUT -> Picasso.with(CommonLib.getApp()).load(R.mipmap.fengqiu).into(imageView)
+        UserAction.NEW_GAME -> Picasso.with(CommonLib.getApp()).load(R.mipmap.huoqiu).into(imageView)
+        UserAction.CONTINUE -> Picasso.with(CommonLib.getApp()).load(R.mipmap.shuiqiu).into(imageView)
+        UserAction.RANK -> Picasso.with(CommonLib.getApp()).load(R.mipmap.leiqiu).into(imageView)
+        UserAction.HELP -> Picasso.with(CommonLib.getApp()).load(R.mipmap.tuqiu).into(imageView)
+    }
 }
 
 enum class AvatarName {
