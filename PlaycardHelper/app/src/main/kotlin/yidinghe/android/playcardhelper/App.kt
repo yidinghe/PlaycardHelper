@@ -1,6 +1,8 @@
 package yidinghe.android.playcardhelper
 
 import android.app.Application
+import android.util.Log
+import yidinghe.android.playcardhelper.utils.CommonLib
 
 /**
  * Created by yiding on 11/14/2016.

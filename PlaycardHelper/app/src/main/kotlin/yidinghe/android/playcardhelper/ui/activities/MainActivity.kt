@@ -10,6 +10,8 @@ import org.jetbrains.anko.*
 import yidinghe.android.playcardhelper.R
 import yidinghe.android.playcardhelper.data.UserAction
 import yidinghe.android.playcardhelper.ui.adapters.UserActionGridAdapter
+import yidinghe.android.playcardhelper.utils.CommonLib
+import yidinghe.com.android.kotlin.extensions.snackBar
 
 
 class MainActivity : AppCompatActivity() {
@@ -38,31 +40,44 @@ class MainActivity : AppCompatActivity() {
     private fun initData(): List<UserAction> =
             listOf(UserAction.NEW_GAME, UserAction.CONTINUE, UserAction.RANK, UserAction.HELP, UserAction.ABOUT)
 
-    private fun startNewGame() = alert("New Game", "Reset and start a new game?") {
-        yesButton {
-            //TODO clear the SP
+    private fun startNewGame() {
+        if (CommonLib.isGameInfoExisted())
+            alert("New Game", "Reset and start a new game?") {
+                yesButton {
+                    CommonLib.clearSP()
+                    startActivity<NewGameActivity>()
+                }
+                noButton {}
+            }.show()
+        else
             startActivity<NewGameActivity>()
-        }
-        noButton {}
-    }.show()
+    }
 
-    private fun startContinueGame() = alert("Continue Game", "Continue") {
-        yesButton {
-            //TODO check the SP for game, if not just shakeBar
-            startActivity<GameActivity>()
-        }
-        noButton {}
-    }.show()
+    private fun startContinueGame() {
+        if (CommonLib.isGameInfoExisted())
+            alert("Continue", "Game Data existed, please continue.")
+            {
+                yesButton {
+                    startActivity<GameActivity>()
+                }
+                noButton {}
+            }.show()
+        else
+            snackBar("No Game Data, please start a New Game.")
+
+    }
+
 
     private fun startAbout() = startActivity<AboutActivity>()
     private fun startHelp() = startActivity<HelpActivity>()
-    private fun startRank() = alert("Rank", "Rank") {
-        yesButton {
-            //TODO check the SP for game, if not just shakeBar
+
+    private fun startRank() {
+        if (CommonLib.isGameInfoExisted())
             startActivity<RankActivity>()
-        }
-        noButton {}
-    }.show()
+        else
+            snackBar("No Game Data, please start a New Game.")
+    }
+
 
 }
 
