@@ -15,22 +15,22 @@ import yidinghe.com.android.kotlin.extensions.ctx
  */
 
 
-class UserActionGridAdapter(val items: List<UserAction>, val itemClick: (UserAction) -> Unit) : RecyclerView.Adapter<ViewHolder>() {
+class UserActionGridAdapter(val items: List<UserAction>, val itemClick: (UserAction) -> Unit) : RecyclerView.Adapter<UserActionViewHolder>() {
 
-    override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: UserActionViewHolder?, position: Int) {
         holder?.bindUserAction(items[position])
     }
 
     override fun getItemCount() = items.size
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): UserActionViewHolder {
         val view = LayoutInflater.from(parent?.ctx).inflate(R.layout.list_grid_item, parent, false)
-        return ViewHolder(view, itemClick)
+        return UserActionViewHolder(view, itemClick)
     }
 
 }
 
-class ViewHolder(view: View, val itemClick: (UserAction) -> Unit) : RecyclerView.ViewHolder(view) {
+class UserActionViewHolder(view: View, val itemClick: (UserAction) -> Unit) : RecyclerView.ViewHolder(view) {
 
     fun bindUserAction(userAction: UserAction) {
 

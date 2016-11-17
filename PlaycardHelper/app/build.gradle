@@ -36,6 +36,10 @@ dependencies {
     compile "org.jetbrains.anko:anko-common:$anko_version"
     compile "org.jetbrains.anko:anko-sqlite:$anko_version"
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    compile "com.google.code.gson:gson:2.4"
+    compile "com.squareup.picasso:picasso:2.5.2"
+
     compile('com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:0.10.0@aar') {
         transitive = true
     }
