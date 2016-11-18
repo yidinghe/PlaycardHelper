@@ -17,3 +17,9 @@ Target platforms
 Latest version
 ---
 - Version 0.1  (11/18/2016)
+
+License
+---
+
+Helper only for users who plays playcard with TAO_LAOBAN.
+Please do not use it for commercial side. Also, all the icons are got it from internet, please do not use it for commercial side either.
