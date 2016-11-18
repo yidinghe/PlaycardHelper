@@ -28,12 +28,11 @@ class GameBoardActivity : AppCompatActivity() {
             startActivity<CalculatorActivity>()
         }
 
-        snackBar("GameBoardActivity")
+        snackBar("Welcome and Enjoy your game")
     }
 
     override fun onResume() {
         super.onResume()
-
         initViews()
     }
 

@@ -10,6 +10,10 @@
         style="@style/MyTitleStyle"
         android:text="New Game" />
 
+    <TextView
+        style="@style/MyMessageStyle"
+        android:text="Choose Players and Confirm." />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/avatar_recycler_view"
         style="@style/myRecyclerViewStyle"
