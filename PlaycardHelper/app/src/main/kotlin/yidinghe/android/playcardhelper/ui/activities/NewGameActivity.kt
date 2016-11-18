@@ -54,6 +54,8 @@ class NewGameActivity : AppCompatActivity() {
 
             if (users.size == 0) {
                 snackBar("No Players added. Please add Players")
+            } else if (users.size < 4) {
+                snackBar(" Min 4 Players needed. Please add some Players")
             } else if (users.size > 8) {
                 snackBar(" Max 8 Players Allowed. Please remove some Players")
             } else {

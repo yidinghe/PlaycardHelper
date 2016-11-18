@@ -1,5 +1,6 @@
 package yidinghe.android.playcardhelper.data
 
+import android.view.View
 import android.widget.ImageView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.list_grid_avatar_item.view.*
@@ -13,7 +14,18 @@ import java.util.*
 
 data class GameData(val users: List<User>, var round: Int = 1)
 
-data class User(val avatar: Avatar, var score: Double = 0.0, var isBankerSideForThisRound: Boolean = false)
+data class User(val avatar: Avatar, var totalScore: Double = 0.0, var score: Double = 0.0, var isBankerSideForThisRound: Boolean = false)
+
+data class DragUser(val id: Int, val user: User)
+
+fun User.loadCheckMark(imageView: ImageView) {
+    imageView.visibility = View.VISIBLE
+    if (isBankerSideForThisRound) {
+        Picasso.with(CommonLib.getApp()).load(R.mipmap.gou).into(imageView)
+    } else {
+        Picasso.with(CommonLib.getApp()).load(R.mipmap.gou2).into(imageView)
+    }
+}
 
 fun User.loadRankImage(imageView: ImageView, rank: Int) {
     when (rank) {

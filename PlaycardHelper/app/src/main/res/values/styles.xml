@@ -42,7 +42,7 @@
 
     <style name="MyListViewTextStyle">
         <item name="android:textColor">@color/colorPrimary</item>
-        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_width">60dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">12sp</item>
         <item name="android:layout_gravity">center_vertical</item>

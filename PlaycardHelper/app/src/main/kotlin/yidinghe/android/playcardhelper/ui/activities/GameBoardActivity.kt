@@ -44,6 +44,6 @@ class GameBoardActivity : AppCompatActivity() {
 
         val gameBoardRecyclerView: RecyclerView = find(R.id.game_board_recycler_view)
         gameBoardRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        gameBoardRecyclerView.adapter = UserRankListAdapter(gameInfo.users.sortedBy { it.score })
+        gameBoardRecyclerView.adapter = UserRankListAdapter(gameInfo.users.sortedByDescending { it.totalScore })
     }
 }

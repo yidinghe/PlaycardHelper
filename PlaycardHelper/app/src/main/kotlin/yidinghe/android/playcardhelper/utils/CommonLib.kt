@@ -17,7 +17,6 @@ class CommonLib {
 
         private val SHARED_PREFERENCE_KEY = "PLAY_CARD_HELPER_SP"
         private val KEY_GAME_INFO = "GAME_INFO"
-        private var sAppInstance: App? = null
 
         fun getApp() = App.applicationInstance
         private fun getSp() = getApp().getSharedPreferences(SHARED_PREFERENCE_KEY, Context.MODE_PRIVATE)

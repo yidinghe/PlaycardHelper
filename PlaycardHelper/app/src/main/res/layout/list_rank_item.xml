@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rank_container"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorTransparent"
@@ -27,9 +28,9 @@
             <ImageView
                 android:id="@+id/rank_avatar_image_view"
                 android:layout_width="40dp"
-                android:layout_marginLeft="5dp"
                 android:layout_height="40dp"
                 android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp" />
 
         </RelativeLayout>
@@ -46,10 +47,17 @@
         android:layout_weight="1.5" />
 
     <ImageView
+        android:id="@+id/rank_is_banker_side_image_view"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="70dp"
+        android:background="@mipmap/gou" />
+
+    <ImageView
         android:id="@+id/rank_rank_image_view"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_alignParentRight="true"
         android:layout_gravity="center_vertical"
         android:layout_marginRight="10dp" />
 

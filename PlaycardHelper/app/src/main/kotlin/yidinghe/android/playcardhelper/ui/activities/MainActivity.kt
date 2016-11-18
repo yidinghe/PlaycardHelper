@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun startNewGame() {
         if (CommonLib.isGameInfoExisted())
-            alert("New Game", "Reset and start a new game?") {
+            alert("Reset and start a new game?", "New Game") {
                 yesButton {
                     CommonLib.clearSP()
                     startActivity<NewGameActivity>()
@@ -62,8 +62,20 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun startAbout() = startActivity<AboutActivity>()
-    private fun startHelp() = startActivity<HelpActivity>()
+    private fun startAbout() {
+//        startActivity<AboutActivity>()
+//        snackBar("Not implemented yet")
+        alert("Version = 0.1", "About") {
+            okButton { }
+        }.show()
+    }
+
+    private fun startHelp() {
+//        startActivity<HelpActivity>()
+        alert("Not implemented yet", "Help") {
+            okButton { }
+        }.show()
+    }
 
     private fun startRank() {
         if (CommonLib.isGameInfoExisted())
