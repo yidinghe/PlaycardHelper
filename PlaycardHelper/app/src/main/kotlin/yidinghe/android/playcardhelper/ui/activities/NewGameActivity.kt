@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.widget.Button
 import com.google.gson.Gson
+import org.jetbrains.anko.alert
 import org.jetbrains.anko.contentView
 import org.jetbrains.anko.find
 import org.jetbrains.anko.toast
@@ -33,7 +34,7 @@ class NewGameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_game)
 
-        snackBar("NewGame Started, Choose Players")
+        snackBar("New Game Start, Please add Players")
 
         val avatarRecyclerView: RecyclerView = find(R.id.avatar_recycler_view)
         avatarRecyclerView.layoutManager = GridLayoutManager(this, 4, GridLayoutManager.VERTICAL, false)
@@ -54,11 +55,20 @@ class NewGameActivity : AppCompatActivity() {
         nextButton.setOnClickListener {
             val users = DataMapper().convertFromAvatarToUser(avatars)
 
-            val gameInfo = Gson().toJson(GameData(users))
-            Log.d(javaClass.simpleName, gameInfo)
+            if (users.size == 0){
+                snackBar("No Players added. Please add Players")
+            }else{
+                val gameInfo = Gson().toJson(GameData(users))
+                Log.d(javaClass.simpleName, gameInfo)
+                alert("${users.size} Players are ${DataMapper().getAllUserName(users)}", "Please confirm users") {
+                    yesButton {
+                        CommonLib.putGameInfo(gameInfo)
+                        finish()
+                    }
+                    noButton {}
+                }.show()
+            }
 
-            CommonLib.putGameInfo(gameInfo)
-            finish()
         }
 
     }

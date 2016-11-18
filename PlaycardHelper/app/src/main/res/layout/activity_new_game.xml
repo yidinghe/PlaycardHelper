@@ -13,11 +13,11 @@
         android:layout_centerHorizontal="true" />
 
     <Button
+        android:layout_marginTop="10dp"
         android:id="@+id/new_game_next_button"
-        android:layout_margin="10dp"
         android:background="@mipmap/next"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/avatar_recycler_view"
         android:layout_width="50dp"
         android:layout_height="30dp" />
 

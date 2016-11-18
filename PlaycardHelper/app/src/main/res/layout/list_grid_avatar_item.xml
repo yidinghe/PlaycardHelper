@@ -1,7 +1,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="80dp"
-    android:layout_height="115dp"
+    android:layout_width="@dimen/avatar_grid_view_width"
+    android:layout_height="@dimen/avatar_grid_view_height"
     android:layout_margin="4dp"
     android:background="#ffffff">
 
