@@ -3,9 +3,9 @@ Playcard Helper
 
 This playcard Helper used following libs:
 
-1. kolin
-2. Advancedrecyclerview
-3. Picasso
+1. Kotlin and Anko - [Repository](https://github.com/Kotlin/anko)
+2. Advancedrecyclerview - [Repository](https://github.com/h6ah4i/android-advancedrecyclerview)
+3. Picasso - [Repository](https://github.com/square/picasso)
 
 
 Target platforms
