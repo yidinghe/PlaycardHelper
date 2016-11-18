@@ -16,12 +16,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.NewGameActivity"></activity>
-        <activity android:name=".ui.activities.GameBoardActivity"></activity>
-        <activity android:name=".ui.activities.RankActivity"></activity>
-        <activity android:name=".ui.activities.AboutActivity"></activity>
-        <activity android:name=".ui.activities.HelpActivity"></activity>
-        <activity android:name=".ui.activities.CalculatorActivity"></activity>
+        <activity
+            android:name=".ui.activities.NewGameActivity"
+            android:label="New Game"></activity>
+        <activity
+            android:name=".ui.activities.GameBoardActivity"
+            android:label="Game Board"></activity>
+        <activity
+            android:name=".ui.activities.RankActivity"
+            android:label="Rank"></activity>
+        <activity
+            android:name=".ui.activities.AboutActivity"
+            android:label="About"></activity>
+        <activity
+            android:name=".ui.activities.HelpActivity"
+            android:label="Help"></activity>
+        <activity
+            android:name=".ui.activities.CalculatorActivity"
+            android:label="Calculate Scores"></activity>
     </application>
 
 </manifest>
