@@ -11,7 +11,7 @@ import java.util.*
  * Created by yidinghe on 11/16/16.
  */
 
-data class GameData(val users: List<User>, var round: Int = 0)
+data class GameData(val users: List<User>, var round: Int = 1)
 
 data class User(val avatar: Avatar, var score: Double = 0.0, var isBankerSideForThisRound: Boolean = false)
 

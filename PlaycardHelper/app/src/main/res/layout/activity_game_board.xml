@@ -5,6 +5,7 @@
     android:orientation="vertical">
 
     <TextView
+
         style="@style/MyTitleStyle"
         android:text="Game Board" />
 
@@ -14,11 +15,12 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/game_board_round"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:text="Round 1"
             android:layout_weight="2"
+            android:text="Round 1"
             android:textColor="@color/colorAccent"
             android:textSize="18sp" />
 
@@ -26,9 +28,16 @@
             android:id="@+id/calculate_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.1"
             android:layout_marginRight="30dp"
-            android:text="CALCULATE SCORE"/>
+            android:layout_weight="0.1"
+            android:text="CALCULATE SCORE" />
     </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/game_board_recycler_view"
+        style="@style/myRecyclerViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" />
 
 </LinearLayout>
