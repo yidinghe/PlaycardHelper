@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun startContinueGame() {
         if (CommonLib.isGameInfoExisted())
-            startActivity<GameActivity>()
+            startActivity<GameBoardActivity>()
         else
             snackBar("No Game Data, please start a New Game.")
 

@@ -8,10 +8,7 @@ import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.widget.Button
 import com.google.gson.Gson
-import org.jetbrains.anko.alert
-import org.jetbrains.anko.contentView
-import org.jetbrains.anko.find
-import org.jetbrains.anko.toast
+import org.jetbrains.anko.*
 import yidinghe.android.playcardhelper.R
 import yidinghe.android.playcardhelper.data.Avatar
 import yidinghe.android.playcardhelper.data.AvatarName
@@ -63,6 +60,7 @@ class NewGameActivity : AppCompatActivity() {
                 alert("${users.size} Players are ${DataMapper().getAllUserName(users)}", "Please confirm users") {
                     yesButton {
                         CommonLib.putGameInfo(gameInfo)
+                        startActivity<GameBoardActivity>()
                         finish()
                     }
                     noButton {}
