@@ -52,9 +52,11 @@ class NewGameActivity : AppCompatActivity() {
         nextButton.setOnClickListener {
             val users = DataMapper().convertFromAvatarToUser(avatars)
 
-            if (users.size == 0){
+            if (users.size == 0) {
                 snackBar("No Players added. Please add Players")
-            }else{
+            } else if (users.size > 8) {
+                snackBar(" Max 8 Players Allowed. Please remove some Players")
+            } else {
                 val gameInfo = Gson().toJson(GameData(users))
                 Log.d(javaClass.simpleName, gameInfo)
                 alert("${users.size} Players are ${DataMapper().getAllUserName(users)}", "Please confirm users") {

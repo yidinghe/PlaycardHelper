@@ -1,24 +1,27 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_new_game"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="yidinghe.android.playcardhelper.ui.activities.NewGameActivity">
+
+    <TextView
+        style="@style/MyTitleStyle"
+        android:text="New Game" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/avatar_recycler_view"
         style="@style/myRecyclerViewStyle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_marginTop="10dp"
-        android:id="@+id/new_game_next_button"
-        android:layout_centerHorizontal="true"
-        android:text="COMFIRM PLAYERS"
-        android:layout_below="@+id/avatar_recycler_view"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/new_game_next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="CONFIRM PLAYERS" />
+
+</LinearLayout>

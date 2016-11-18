@@ -15,6 +15,19 @@ data class GameData(val users: List<User>, var round: Int = 1)
 
 data class User(val avatar: Avatar, var score: Double = 0.0, var isBankerSideForThisRound: Boolean = false)
 
+fun User.loadRankImage(imageView: ImageView, rank: Int) {
+    when (rank) {
+        0 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.number_1).into(imageView)
+        1 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.number_2).into(imageView)
+        2 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.number_3).into(imageView)
+        3 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.number_4).into(imageView)
+        4 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.number_5).into(imageView)
+        5 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.number_6).into(imageView)
+        6 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.number_7).into(imageView)
+        7 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.number_8).into(imageView)
+    }
+}
+
 data class Avatar(val avatarName: AvatarName, val male: Boolean, val imageIndex: Int = 0, val background: Int = Random().nextInt(3), var isChecked: Boolean = false)
 
 fun Avatar.loadBackgroundImage(imageView: ImageView) {

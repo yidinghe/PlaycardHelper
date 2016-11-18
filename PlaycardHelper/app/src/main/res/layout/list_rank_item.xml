@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorTransparent"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="40dp"
+        android:layout_height="60dp"
+        android:layout_margin="4dp"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/rank_background_image_view"
+            android:layout_width="40dp"
+            android:layout_height="60dp" />
+
+        <RelativeLayout
+            android:id="@+id/rank_avatar_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            tools:ignore="UselessParent">
+
+            <ImageView
+                android:id="@+id/rank_avatar_image_view"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:id="@+id/rank_avatar_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rank_avatar_image_view"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:paddingLeft="2dp"
+                android:textColor="#000000"
+                android:textSize="7sp"
+                tools:ignore="RtlHardcoded" />
+
+        </RelativeLayout>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/rank_name_text"
+        style="@style/MyListViewTextStyle"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/rank_score_text"
+        style="@style/MyListViewTextStyle"
+        android:layout_weight="1.5" />
+
+    <ImageView
+        android:id="@+id/rank_rank_image_view"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="10dp" />
+
+</LinearLayout>

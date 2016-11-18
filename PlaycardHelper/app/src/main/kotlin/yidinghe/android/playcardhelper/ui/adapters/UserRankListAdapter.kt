@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.list_grid_avatar_item.view.*
 import kotlinx.android.synthetic.main.list_grid_item.view.*
+import kotlinx.android.synthetic.main.list_rank_item.view.*
 import yidinghe.android.playcardhelper.R
 import yidinghe.android.playcardhelper.data.*
 import yidinghe.android.playcardhelper.utils.CommonLib
@@ -21,13 +22,13 @@ import yidinghe.com.android.kotlin.extensions.ctx
 class UserRankListAdapter(val items: List<User>) : RecyclerView.Adapter<UserRankViewHolder>() {
 
     override fun onBindViewHolder(holder: UserRankViewHolder?, position: Int) {
-        holder?.bindUser(items[position])
+        holder?.bindUser(items[position], position)
     }
 
     override fun getItemCount() = items.size
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): UserRankViewHolder {
-        val view = LayoutInflater.from(parent?.ctx).inflate(R.layout.list_grid_avatar_item, parent, false)
+        val view = LayoutInflater.from(parent?.ctx).inflate(R.layout.list_rank_item, parent, false)
         return UserRankViewHolder(view)
     }
 
@@ -36,9 +37,14 @@ class UserRankListAdapter(val items: List<User>) : RecyclerView.Adapter<UserRank
 
 class UserRankViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-    fun bindUser(user: User) {
+    fun bindUser(user: User, position: Int) {
+        itemView.rank_name_text.text = user.avatar.avatarName.name
+        itemView.rank_score_text.text = "SCORE: ${user.score}"
 
-        itemView.avatar_text_view.text = user.avatar.avatarName.name
+        user.avatar.loadBackgroundImage(itemView.rank_background_image_view)
+        user.avatar.loadAvatarImage(itemView.rank_avatar_image_view)
+        user.loadRankImage(itemView.rank_rank_image_view, position)
+
     }
 
 }
