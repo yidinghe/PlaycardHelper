@@ -13,6 +13,7 @@ import yidinghe.android.playcardhelper.R
 import yidinghe.android.playcardhelper.data.*
 import yidinghe.android.playcardhelper.utils.CommonLib
 import yidinghe.com.android.kotlin.extensions.ctx
+import java.text.DecimalFormat
 
 /**
  * Created by yiding on 11/14/2016.
@@ -39,7 +40,8 @@ class UserRankViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun bindUser(user: User, position: Int) {
         itemView.rank_name_text.text = user.avatar.avatarName.name
-        itemView.rank_score_text.text = "SCORE: ${user.totalScore}"
+        val formatter = DecimalFormat("#0.00")
+        itemView.rank_score_text.text = "SCORE: ${formatter.format(user.totalScore)}"
 
         user.avatar.loadBackgroundImage(itemView.rank_background_image_view)
         user.avatar.loadAvatarImage(itemView.rank_avatar_image_view)
