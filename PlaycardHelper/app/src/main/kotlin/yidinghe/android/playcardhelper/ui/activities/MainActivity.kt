@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
     private fun startAbout() {
 //        startActivity<AboutActivity>()
 //        snackBar("Not implemented yet")
-        alert("Version = 0.1", "About") {
+        alert("Version = 0.2", "About") {
             okButton { }
         }.show()
     }

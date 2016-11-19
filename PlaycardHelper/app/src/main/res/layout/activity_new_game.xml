@@ -1,31 +1,37 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_new_game"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="yidinghe.android.playcardhelper.ui.activities.NewGameActivity">
 
-    <TextView
-        style="@style/MyTitleStyle"
-        android:text="New Game" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        style="@style/MyMessageStyle"
-        android:text="Choose Players and Confirm." />
+        <TextView
+            style="@style/MyTitleStyle"
+            android:text="New Game" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/avatar_recycler_view"
-        style="@style/myRecyclerViewStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            style="@style/MyMessageStyle"
+            android:text="Choose Players and Confirm." />
 
-    <Button
-        android:id="@+id/new_game_next_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:text="CONFIRM PLAYERS" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/avatar_recycler_view"
+            style="@style/myRecyclerViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/new_game_next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="CONFIRM PLAYERS" />
+    </LinearLayout>
+
+
+</ScrollView>

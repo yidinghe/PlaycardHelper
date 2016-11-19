@@ -80,7 +80,6 @@ fun Avatar.loadAvatarImage(imageView: ImageView) {
             7 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.female_07).into(imageView)
             8 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.female_08).into(imageView)
             9 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.female_09).into(imageView)
-            10 -> Picasso.with(CommonLib.getApp()).load(R.mipmap.female_010).into(imageView)
         }
     }
 
@@ -102,5 +101,5 @@ fun UserAction.loadBackgroundImage(imageView: ImageView) {
 }
 
 enum class AvatarName {
-    TAO_LAOBAN, YANG_DAO, LIANG_GE, ZI_DAO, XUN_GE, JIE_GE, WEI_ZONG, WONG_DAO, LEI_ZONG, A_NUO, BAI_LU, QIANG_GE, HUANG, HE, TANG, SHEN_TONG
+    TAO_LAOBAN, YANG_DAO, A_NUO, LIANG_GE, LEI_ZONG, ZI_DAO, WONG_DAO, JIE_GE, WEI_ZONG, BAI_LU, QIANG_GE, HE, TANG, XUN_GE, SHEN_TONG, HUANG
 }

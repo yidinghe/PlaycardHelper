@@ -25,7 +25,7 @@ class NewGameActivity : AppCompatActivity() {
     private val femaleImageIndexHashSet = HashSet<Int>()
 
     private val MALE_IMAGE_INDEX_UPPER_BOUND = 13
-    private val FEMALE_IMAGE_INDEX_UPPER_BOUND = 11
+    private val FEMALE_IMAGE_INDEX_UPPER_BOUND = 10
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
