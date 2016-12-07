@@ -10,6 +10,7 @@ import yidinghe.android.playcardhelper.R
 import yidinghe.android.playcardhelper.data.UserAction
 import yidinghe.android.playcardhelper.data.loadBackgroundImage
 import yidinghe.com.android.kotlin.extensions.ctx
+import yidinghe.com.android.kotlin.extensions.inflate
 
 /**
  * Created by yiding on 11/14/2016.
@@ -25,8 +26,8 @@ class UserActionGridAdapter(val items: List<UserAction>, val itemClick: (UserAct
     override fun getItemCount() = items.size
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): UserActionViewHolder {
-        val view = LayoutInflater.from(parent?.ctx).inflate(R.layout.list_grid_item, parent, false)
-        return UserActionViewHolder(view, itemClick)
+        val view = parent?.inflate(R.layout.list_grid_item)
+        return UserActionViewHolder(view!!, itemClick)
     }
 
 }

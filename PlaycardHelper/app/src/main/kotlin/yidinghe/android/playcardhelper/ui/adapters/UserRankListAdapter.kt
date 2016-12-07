@@ -13,6 +13,7 @@ import yidinghe.android.playcardhelper.R
 import yidinghe.android.playcardhelper.data.*
 import yidinghe.android.playcardhelper.utils.CommonLib
 import yidinghe.com.android.kotlin.extensions.ctx
+import yidinghe.com.android.kotlin.extensions.inflate
 import java.text.DecimalFormat
 
 /**
@@ -29,8 +30,8 @@ class UserRankListAdapter(val items: List<User>) : RecyclerView.Adapter<UserRank
     override fun getItemCount() = items.size
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): UserRankViewHolder {
-        val view = LayoutInflater.from(parent?.ctx).inflate(R.layout.list_rank_item, parent, false)
-        return UserRankViewHolder(view)
+        val view = parent?.inflate(R.layout.list_rank_item)
+        return UserRankViewHolder(view!!)
     }
 
 

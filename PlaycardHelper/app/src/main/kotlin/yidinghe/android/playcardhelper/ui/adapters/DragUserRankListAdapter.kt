@@ -16,6 +16,7 @@ import yidinghe.android.playcardhelper.R
 import yidinghe.android.playcardhelper.data.*
 import yidinghe.android.playcardhelper.utils.CommonLib
 import yidinghe.com.android.kotlin.extensions.ctx
+import yidinghe.com.android.kotlin.extensions.inflate
 
 /**
  * Created by yiding on 11/14/2016.
@@ -62,8 +63,8 @@ class DragUserRankListAdapter(var items: MutableList<DragUser>) : RecyclerView.A
     override fun getItemCount() = items.size
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): DragUserRankViewHolder {
-        val view = LayoutInflater.from(parent?.ctx).inflate(R.layout.list_rank_item, parent, false)
-        return DragUserRankViewHolder(view)
+        val view = parent?.inflate(R.layout.list_rank_item)
+        return DragUserRankViewHolder(view!!)
     }
 
 
