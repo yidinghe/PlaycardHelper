@@ -16,7 +16,8 @@ Target platforms
 
 Latest version
 ---
-- Version 0.1  (11/18/2016)
+- Version 0.2  (11/19/2016)
+- 0.2 Hot Fix for the phones has small screen. Removed one female Icon.
 
 License
 ---
