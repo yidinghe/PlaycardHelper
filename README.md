@@ -23,3 +23,12 @@ License
 
 Helper only for users who plays playcard with TAO_LAOBAN.
 Please do not use it for commercial side. Also, all the icons are got it from internet, please do not use it for commercial side either.
+
+## DEMO
+---
+
+![demo_1](Resources/demo_1.png)  
+![demo_2](Resources/demo_2.png)  
+![demo_3](Resources/demo_3.png)  
+![demo_4](Resources/demo_4.png)  
+![demo_5](Resources/demo_5.png)  
