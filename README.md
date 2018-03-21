@@ -27,7 +27,7 @@ Please do not use it for commercial side. Also, all the icons are got it from in
 ## DEMO
 ---
 
-![demo_1](Resources/demo_1.png)  
+![demo_1](Resources/demo_1.PNG)  
 ![demo_2](Resources/demo_2.png)  
 ![demo_3](Resources/demo_3.png)  
 ![demo_4](Resources/demo_4.png)  
