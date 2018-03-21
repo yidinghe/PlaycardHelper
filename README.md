@@ -27,8 +27,13 @@ Please do not use it for commercial side. Also, all the icons are got it from in
 ## DEMO
 ---
 Screenshots for the application.  
+Main Page:  
 ![demo_1](Resources/demo_1.PNG)  
+Game Borad Page:  
 ![demo_2](Resources/demo_2.PNG)  
+Ranking Page:  
 ![demo_3](Resources/demo_3.PNG)  
+Start New Game Page:  
 ![demo_4](Resources/demo_4.PNG)  
+Choose Players:  
 ![demo_5](Resources/demo_5.PNG)  
