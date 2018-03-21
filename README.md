@@ -26,9 +26,9 @@ Please do not use it for commercial side. Also, all the icons are got it from in
 
 ## DEMO
 ---
-
+Screenshots for the application.  
 ![demo_1](Resources/demo_1.PNG)  
-![demo_2](Resources/demo_2.png)  
-![demo_3](Resources/demo_3.png)  
-![demo_4](Resources/demo_4.png)  
-![demo_5](Resources/demo_5.png)  
+![demo_2](Resources/demo_2.PNG)  
+![demo_3](Resources/demo_3.PNG)  
+![demo_4](Resources/demo_4.PNG)  
+![demo_5](Resources/demo_5.PNG)  
